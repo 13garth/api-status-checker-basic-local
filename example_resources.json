@@ -1,0 +1,21 @@
+{
+  "projects": [
+    {
+      "id": "p_sample",
+      "name": "Sample Project",
+      "environments": [
+        {
+          "id": "e_sample",
+          "name": "Production",
+          "url": "https://example.com/",
+          "lastStatus": {
+            "state": "unknown",
+            "httpStatus": null,
+            "checkedAt": null,
+            "detail": null
+          }
+        }
+      ]
+    }
+  ]
+}

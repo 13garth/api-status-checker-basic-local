@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>API Status Dashboard</title>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1" />
+		<!-- Your Bootswatch/Bootstrap CSS goes in style.css -->
+		<link
+			rel="stylesheet"
+			href="style.css" />
+		<!-- Optional fallback if your file is misspelled as 'styel.css' -->
+		<link
+			rel="stylesheet"
+			href="styel.css"
+			onerror="this.remove()" />
+	</head>
+	<body class="container py-4">
+		<header class="mb-4">
+			<h1 class="h3">API Status Dashboard</h1>
+			<p class="text-muted mb-1">
+				Open this file directly. No server required.
+			</p>
+			<div
+				id="supportWarnings"
+				class="small"></div>
+		</header>
+
+		<section class="mb-3">
+			<div class="d-flex gap-2 flex-wrap">
+				<button
+					id="btnConnectFile"
+					class="btn btn-primary">
+					Connect <code>resources.json</code>
+				</button>
+				<button
+					id="btnSave"
+					class="btn btn-success">
+					Save
+				</button>
+				<button
+					id="btnExport"
+					class="btn btn-outline-secondary">
+					Export JSON
+				</button>
+				<button
+					id="btnImport"
+					class="btn btn-outline-secondary">
+					Import JSON
+				</button>
+				<button
+					id="btnRefreshStatuses"
+					class="btn btn-outline-primary">
+					Refresh Statuses
+				</button>
+			</div>
+			<input
+				id="fileImportInput"
+				type="file"
+				accept="application/json"
+				class="d-none" />
+		</section>
+
+		<section class="card mb-4">
+			<div class="card-body">
+				<form
+					id="addProjectForm"
+					class="row gy-2 gx-2 align-items-end">
+					<div class="col-12 col-md-5">
+						<label
+							for="projectName"
+							class="form-label"
+							>New project name</label
+						>
+						<input
+							type="text"
+							id="projectName"
+							class="form-control"
+							placeholder="e.g. Payments API" />
+					</div>
+					<div class="col-12 col-md-3">
+						<label
+							for="firstEnvName"
+							class="form-label"
+							>First environment (optional)</label
+						>
+						<input
+							type="text"
+							id="firstEnvName"
+							class="form-control"
+							placeholder="e.g. Production" />
+					</div>
+					<div class="col-12 col-md-4">
+						<label
+							for="firstEnvUrl"
+							class="form-label"
+							>Environment URL (optional)</label
+						>
+						<input
+							type="url"
+							id="firstEnvUrl"
+							class="form-control"
+							placeholder="https://api.example.com/health" />
+					</div>
+					<div class="col-12">
+						<button
+							type="submit"
+							class="btn btn-primary">
+							Add Project
+						</button>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<section>
+			<div class="table-responsive">
+				<table
+					class="table table-hover align-middle"
+					id="projectsTable">
+					<thead class="table-light">
+						<tr>
+							<th style="width: 18rem">Project</th>
+							<th>Environments</th>
+							<th style="width: 10rem">Actions</th>
+						</tr>
+					</thead>
+					<tbody id="projectsTbody">
+						<!-- Rendered by script.js -->
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<template id="envRowTemplate">
+			<tr class="env-row">
+				<td class="env-name"></td>
+				<td class="env-url"></td>
+				<td class="env-status fw-semibold"></td>
+				<td class="env-actions text-nowrap"></td>
+			</tr>
+		</template>
+
+		<script
+			src="script.js"
+			defer></script>
+	</body>
+</html>
