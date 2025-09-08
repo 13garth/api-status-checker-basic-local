@@ -1,3 +1,5 @@
+![API Status Dashboard](screenshot.png)
+
 # API Status Dashboard (File-Based)
 
 A tiny, **serverless** status dashboard that you can run by simply opening `index.html`.  
@@ -195,5 +197,6 @@ No backend. No build step. Works offline.
 ---
 
 ## License
+
 
 Use freely. MIT-style — do what you like.
